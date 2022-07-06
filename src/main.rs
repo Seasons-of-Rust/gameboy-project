@@ -1,3 +1,4 @@
+mod cpu;
 mod gameboy;
 
 fn main() {

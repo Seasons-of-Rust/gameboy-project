@@ -1,2 +1,3 @@
 pub mod cpu;
-pub use cpu::cpu;
+
+pub use cpu::CPU;
