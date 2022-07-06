@@ -1,3 +1,6 @@
+mod gameboy;
+
 fn main() {
-    println!("Hello, world!");
+    let g: gameboy::Gameboy = gameboy::Gameboy::new();
+    println!("{}", g);
 }
