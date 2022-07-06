@@ -1,7 +1,10 @@
+mod apu;
 mod cpu;
 mod gameboy;
+mod mmu;
+mod ppu;
 
 fn main() {
-    let g: gameboy::Gameboy = gameboy::Gameboy::new();
-    g.run();
+    let gameboy = gameboy::Gameboy::new();
+    gameboy.tick();
 }
