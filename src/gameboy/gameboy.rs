@@ -1,19 +1,21 @@
+use crate::cpu::CPU;
+
 pub struct Gameboy {
-    cpu: bool,
+    cpu: CPU,
 }
 
 impl std::fmt::Display for Gameboy {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        write!(f, "CPU: {}", self.cpu)
+        write!(f, "CPU: ")
     }
 }
 
 impl Gameboy {
     pub fn new() -> Gameboy {
-        Gameboy { cpu: true }
+        Gameboy { cpu: CPU::new() }
     }
 
     pub fn run(self) {
-        //TODO
+        self.cpu.run();
     }
 }
