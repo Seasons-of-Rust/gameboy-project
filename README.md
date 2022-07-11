@@ -2,6 +2,13 @@
 
 This is a template to get you started with your Rust project!
 
+Resources:
+Gameboy Development Manual V1.1
+https://archive.org/details/GameBoyProgManVer1.1/mode/2up
+
+pastraiser Game Boy opcodes table
+https://www.pastraiser.com/cpu/gameboy/gameboy_opcodes.html
+
 ## License
 
 This repository is duel-licensed under either:
