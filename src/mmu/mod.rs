@@ -1,15 +1,42 @@
-pub struct Mmu {}
+pub struct Mmu {
+    memory: [u8; 0xFFFF],
+}
 
 impl Mmu {
     pub fn new() -> Mmu {
-        Mmu {}
+        Mmu {
+            memory: [0; 0xFFFF],
+        }
     }
 
     #[allow(dead_code)]
-    pub fn read(self) -> u8 {
-        0
+    fn mem_read(&self, address: u16) -> u8 {
+        self.memory[address as usize]
     }
 
     #[allow(dead_code)]
-    pub fn write(self) {}
+    fn mem_write(&mut self, address: u16, value: u8) {
+        self.memory[address as usize] = value;
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn check_mem_write() {
+        let mut mmu = super::Mmu::new();
+        mmu.mem_write(0x0000, 0xFF);
+        assert_eq!(mmu.memory[0x0000], 0xFF);
+
+        mmu.mem_write(0x8000, 0xCC);
+        assert_eq!(mmu.memory[0x8000], 0xCC);
+    }
+
+    #[test]
+    fn check_mem_read_and_write() {
+        let mut mmu = super::Mmu::new();
+        mmu.mem_write(0x8000, 0xCC);
+        assert_eq!(mmu.mem_read(0x8000), 0xCC);
+
+    }
 }
