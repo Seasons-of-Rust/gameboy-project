@@ -5,7 +5,7 @@ impl Apu {
         Apu {}
     }
 
-    pub fn tick(self) {
+    pub fn tick(&mut self) {
         println!("Apu tick!");
     }
 }

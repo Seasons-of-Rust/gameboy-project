@@ -5,6 +5,6 @@ mod mmu;
 mod ppu;
 
 fn main() {
-    let gameboy = gameboy::Gameboy::new();
+    let mut gameboy = gameboy::Gameboy::new();
     gameboy.tick();
 }

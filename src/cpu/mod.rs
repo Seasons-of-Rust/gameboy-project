@@ -8,7 +8,7 @@ impl Cpu {
         Cpu { running: false }
     }
 
-    pub fn tick(self) {
+    pub fn tick(&mut self) {
         println!("Cpu tick!");
     }
 }

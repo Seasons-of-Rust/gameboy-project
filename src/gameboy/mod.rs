@@ -27,7 +27,7 @@ impl Gameboy {
         }
     }
 
-    pub fn tick(self) {
+    pub fn tick(&mut self) {
         self.apu.tick();
         self.cpu.tick();
         self.ppu.tick();
