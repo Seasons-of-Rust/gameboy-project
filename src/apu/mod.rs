@@ -6,6 +6,6 @@ impl Apu {
     }
 
     pub fn tick(&mut self) {
-        println!("Apu tick!");
+        log::debug!("Apu tick!");
     }
 }

@@ -9,6 +9,6 @@ impl Cpu {
     }
 
     pub fn tick(&mut self) {
-        println!("Cpu tick!");
+        log::debug!("Cpu tick!");
     }
 }

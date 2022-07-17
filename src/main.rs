@@ -5,6 +5,10 @@ mod mmu;
 mod ppu;
 
 fn main() {
+    pretty_env_logger::init();
+
     let mut gameboy = gameboy::Gameboy::new();
-    gameboy.tick();
+    loop {
+        gameboy.tick();
+    }
 }
