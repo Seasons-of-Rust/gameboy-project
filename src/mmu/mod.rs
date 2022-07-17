@@ -1,21 +1,21 @@
 pub struct Mmu {
-    memory: [u8; 0xFFFF],
+    memory: [u8; 0x10000],
 }
 
 impl Mmu {
     pub fn new() -> Mmu {
         Mmu {
-            memory: [0; 0xFFFF],
+            memory: [0; 0x10000],
         }
     }
 
     #[allow(dead_code)]
-    fn mem_read(&self, address: u16) -> u8 {
+    pub fn mem_read(&self, address: u16) -> u8 {
         self.memory[address as usize]
     }
 
     #[allow(dead_code)]
-    fn mem_write(&mut self, address: u16, value: u8) {
+    pub fn mem_write(&mut self, address: u16, value: u8) {
         self.memory[address as usize] = value;
     }
 }
