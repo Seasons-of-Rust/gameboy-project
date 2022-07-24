@@ -37,6 +37,5 @@ mod tests {
         let mut mmu = super::Mmu::new();
         mmu.mem_write(0x8000, 0xCC);
         assert_eq!(mmu.mem_read(0x8000), 0xCC);
-
     }
 }
